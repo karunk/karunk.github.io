@@ -1,0 +1,10 @@
+---
+layout: page
+title: Tech Blog 🧑🏽‍💻
+permalink: /blog/
+desc: My thoughts on technologies I deal with in the workplace
+---
+
+{% for post in site.categories.blog %}
+  {%- include themes/{{ site.amsf_theme }}/includes/page-item.html -%}
+{% endfor %}

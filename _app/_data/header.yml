@@ -1,0 +1,11 @@
+- title: __home__
+  url:   /
+
+- title: Blog
+  url:   /blog/
+
+- title: Projects
+  url:   /projects/
+
+- title: 📄 Résumé
+  url:   /resume/
