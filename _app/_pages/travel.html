@@ -1,0 +1,10 @@
+---
+layout: page
+title: Travel 🚝
+permalink: /travel/
+desc: Some of my projects I've worked on casually outside of work
+---
+
+{% for post in site.tags.travel %}
+{%- include themes/{{ site.amsf_theme }}/includes/page-item.html -%}
+{% endfor %}
