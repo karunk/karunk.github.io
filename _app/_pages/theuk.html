@@ -1,0 +1,10 @@
+---
+layout: page
+title: Relocating to the UK 🇬🇧
+permalink: /theuk/
+desc: Some of my projects I've worked on casually outside of work
+---
+
+{% for post in site.tags.project %}
+{%- include themes/{{ site.amsf_theme }}/includes/page-item.html -%}
+{% endfor %}

@@ -1,0 +1,19 @@
+---
+layout: page
+title: Running 🏃
+permalink: /running/
+desc: Some of my projects I've worked on casually outside of work
+heading-bg: img/running-bg.jpg
+heading-bg-local: true
+heading-bg-color: "#070708"
+heading-bg-size: "cover"
+heading-bg-repeat: "no-repeat"
+heading-bg-text: "#fff"
+---
+
+<p style=”text-align: center;”> <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="9991609283"></div><script src="https://strava-embeds.com/embed.js"></script> </p>
+
+
+{% for post in site.tags.running %}
+{%- include themes/{{ site.amsf_theme }}/includes/page-item.html -%}
+{% endfor %}
