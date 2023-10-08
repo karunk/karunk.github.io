@@ -6,6 +6,7 @@ x-defaults: &defaults
   volumes:
     - ./_app/_pages/:/app/_app/_pages/
     - ./_app/_layouts/:/app/_app/_layouts/
+    - ./_app/_includes/:/app/_app/_includes/
     - ./_app/_data/:/app/_app/_data/
     - ./_app/_posts/:/app/_app/_posts/
     - ./_config.yml:/app/_config.yml
