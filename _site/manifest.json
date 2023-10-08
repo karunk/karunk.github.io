@@ -1,0 +1,15 @@
+{
+  "name": "Karun Vinayagam",
+  "short_name": "Karun",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#ff00b4",
+  "background_color": "#fff",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

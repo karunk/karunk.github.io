@@ -1,0 +1,330 @@
+<!doctype html>
+
+<html lang="en">
+
+<!--
+  Apply head only for dev environment, this is required for jekyll to
+  insert livereload scripts
+-->
+
+  <head>
+
+
+
+  <meta charset="utf-8">
+
+
+<title>Markdown Features Test - Karun Vinayagam</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- Define a description for better SEO result -->
+<meta name="description" content="Indented Code Blocks def show @widget = Widget(params[:id]) respond_to do |format| format.html # show.html.erb format.json { render json: @widget } end end Liquid Tag with linenos Support 1 2 3 4 5 6 7 def show @widget = Widget(params[:id]) respond_to...">
+
+<!-- Cheome Web App theme color -->
+<meta name="theme-color" content="#ff00b4">
+
+<!-- Feed URL -->
+<link rel="alternate" href="/feed.xml" type="application/atom+xml">
+
+<!-- Site icons -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="icon" href="/favicon.png" type="image/png"><link rel="icon" href="/favicon.svg?assets-inline-assets-keep" sizes="any" type="image/svg+xml"><link rel="mask-icon" href="/mask-icon.svg" color="#ff00b4">
+
+<!-- Chrome Web App manifest -->
+<link rel="manifest" href="/manifest.json">
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="/assets/themes/curtana/css/app.css?assets-inline">
+
+<!-- Canonical links, avoid duplicate content problems -->
+<link rel="canonical" href="http://0.0.0.0:4321/markdown-features-test.html">
+
+<!-- DNS prefetching for static files -->
+
+
+<!-- Head hooks -->
+
+
+
+  </head>
+
+<!-- Open Graph and Twitter Cards support -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Karun Vinayagam">
+<meta property="og:title" content="Markdown Features Test">
+<meta property="og:url" content="http://0.0.0.0:4321/markdown-features-test.html">
+<meta property="og:description" content="Indented Code Blocks def show @widget = Widget(params[:id]) respond_to do |format| format.html # show.html.erb format.json { render json: @widget } end end Liquid Tag with linenos Support 1 2 3 4 5 6 7 def show @widget = Widget(params[:id]) respond_to...">
+<meta property="og:image" content="http://0.0.0.0:4321/logo.png">
+
+<meta name="twitter:card" content="summary_large_image">
+
+
+  <meta name="twitter:site" content="@sparanoid">
+
+
+
+  <meta name="twitter:creator" content="@tunghsiao">
+
+
+
+  <meta property="article:published_time" content="2014-06-06T00:00:00+00:00">
+  <meta property="article:modified_time" content="2023-01-31T06:31:08+00:00">
+  <meta name="twitter:label1" value="Words">
+  <meta name="twitter:data1" value="442 words">
+  <meta name="twitter:label2" value="Reading time">
+  <meta name="twitter:data2" value="2 mins">
+
+<!-- Post specified styles -->
+<style data-assets-inline>
+  :root {
+    
+
+    
+
+    
+
+    
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-color-l: 95%;
+      --bg-color-l: 14%;
+      --bg-color-s: 2%;
+      --code-color-l: calc(var(--link-color-l) * 1.3);
+    }
+  }
+  
+
+  body {
+    
+  }
+
+  
+  
+    
+</style>
+<!-- Main navigation with current page / categoriy highlighted -->
+<nav class="navigation">
+  <ul>
+    <li >
+        <a href="/">Karun Vinayagam</a>
+      </li>
+    <li >
+        <a href="/blog/">Blog</a>
+      </li>
+    <li >
+        <a href="/life/">Life</a>
+      </li>
+    <li >
+        <a href="/resume/">📄 Résumé</a>
+      </li>
+    
+  </ul>
+</nav>
+<!-- Main content wrap -->
+<main class="content " role=main>
+  <!-- Post-wide custom CSS -->
+
+
+<!-- Article wrapper, limit width -->
+<article lang="en">
+
+  <!-- Post title -->
+  <header style="     ">
+
+    <h1 class="" title="Markdown Features Test" data-title="Markdown Features Test">
+      Markdown Features Test<span class="dot dot--post"> </span>
+    </h1>
+
+    
+      <small>
+        By <span rel="author">Karun Kalaivanan Vinayagam</span>
+        on <time datetime="2014-06-06T00:00:00+00:00">Jun 6, 2014</time>
+      </small>
+    
+
+    
+
+  </header>
+
+  <!-- Post content -->
+  <div class="post-content">
+    <h2 id="indented-code-blocks">Indented Code Blocks</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def show
+  @widget = Widget(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @widget }
+  end
+end
+</code></pre></div></div>
+
+<h2 id="liquid-tag-with-linenos-support">Liquid Tag with <code class="language-plaintext highlighter-rouge">linenos</code> Support</h2>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">show</span>
+  <span class="vi">@widget</span> <span class="o">=</span> <span class="no">Widget</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">])</span>
+  <span class="n">respond_to</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span>
+    <span class="nb">format</span><span class="p">.</span><span class="nf">html</span> <span class="c1"># show.html.erb</span>
+    <span class="nb">format</span><span class="p">.</span><span class="nf">json</span> <span class="p">{</span> <span class="n">render</span> <span class="ss">json: </span><span class="vi">@widget</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="gfm-code-blocks-fenced_code_blocks">GFM Code Blocks (<code class="language-plaintext highlighter-rouge">fenced_code_blocks</code>)</h2>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* Background color function */</span>
+<span class="nc">.code-bg</span> <span class="o">(</span><span class="k">@v</span><span class="p">)</span> <span class="n">when</span> <span class="p">(</span><span class="n">lightness</span><span class="p">(</span><span class="err">@</span><span class="n">v</span><span class="p">)</span> <span class="err">&gt;=</span> <span class="m">50%</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">@return-bg</span><span class="p">:</span> <span class="nb">mix</span><span class="p">(</span><span class="m">#000</span><span class="p">,</span> <span class="n">lighten</span><span class="p">(</span><span class="err">@</span><span class="n">v</span><span class="p">,</span> <span class="m">30%</span><span class="p">),</span> <span class="m">10%</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nc">.code-bg</span> <span class="o">(</span><span class="k">@v</span><span class="p">)</span> <span class="n">when</span> <span class="p">(</span><span class="n">lightness</span><span class="p">(</span><span class="err">@</span><span class="n">v</span><span class="p">)</span> <span class="err">&lt;</span> <span class="m">50%</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">@return-bg</span><span class="p">:</span> <span class="nb">mix</span><span class="p">(</span><span class="m">#fff</span><span class="p">,</span> <span class="n">darken</span><span class="p">(</span><span class="err">@</span><span class="n">v</span><span class="p">,</span> <span class="m">10%</span><span class="p">),</span> <span class="m">70%</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="smartypants">SmartyPants</h3>
+
+<p>“Aha! What’s up, man?” – Jony said.</p>
+
+<h2 id="tables">Tables</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Upvotes</th>
+      <th>Downvotes</th>
+      <th>Abstentions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Alice</td>
+      <td>10</td>
+      <td>11</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Bob</td>
+      <td>4</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Charlie</td>
+      <td>7</td>
+      <td>9</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Totals</td>
+      <td>21</td>
+      <td>23</td>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="intra-emphasis">Intra-emphasis</h2>
+
+<p>foo_bar_baz</p>
+
+<h2 id="auto-link">Auto-link</h2>
+
+<p>https://sparanoid.com/</p>
+
+<h2 id="strikethroughs">Strikethroughs</h2>
+
+<p>This is <del>good</del> bad.</p>
+
+<h2 id="space-after-headers">Space after Headers</h2>
+
+<p>###This is not a header.</p>
+
+<h2 id="superscripts">Superscripts</h2>
+
+<p>This is the 2^(nd) time.</p>
+
+<h2 id="footnotes">Footnotes</h2>
+
+<p>This<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> is<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> a sentence<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>.</p>
+
+<h2 id="id-日本語タイトル">ID 日本語タイトル</h2>
+
+<p>Expected id should be <code class="language-plaintext highlighter-rouge">id-ri-ben-yu-taitoru</code>.</p>
+
+<h2 id="id-中文標題">ID 中文標題</h2>
+
+<p>Expected id should be <code class="language-plaintext highlighter-rouge">id-zhong-wen-biao-ti</code>.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Lorem lean startup ipsum <strong>product market fit customer development</strong> acquihire technical cofounder. User engagement A/B testing shrink a market venture capital pitch deck. Social bookmarking group buying <a href="#">crowded market</a> pivot onboarding freemium prototype ping pong. Early stage disruptive ecosystem community outreach dynamic location based strategic investor. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;&#xfe0e;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p><a href="https://web.archive.org/web/20160425094356/http://blog.readability.com:80/2012/06/announcement/">An Important Announcement</a> by Richard Ziade at Readability <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;&#xfe0e;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>Good afterble constanoon, this sweet hongi is as bung as a stuffed morepork. Mean while, in the marae, Dr Ropata and Hairy Maclary from Donaldson’s Dairy were up to no good with a bunch of bloody troties. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;&#xfe0e;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+    
+    
+
+    
+  </div>
+
+</article>
+
+</main>
+<!-- Footer section -->
+
+  <footer class="footer">
+    <ul>
+      <li><a href="/">Karun Vinayagam</a></li>
+
+      
+
+      
+    </ul>
+  </footer>
+
+
+<!-- Theme scripts -->
+<script src="/assets/themes/curtana/js/app.js?assets-inline"></script>
+
+<!-- User scripts -->
+<script src="/assets/js/user.js?assets-inline"></script>
+
+<!-- Lightense Images -->
+
+
+<!-- Service Worker  -->
+
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6CET6JV4C"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-S6CET6JV4C');
+      </script>
+
+<!-- Foot hooks -->
+
+
+<!-- Finale -->
+</html>

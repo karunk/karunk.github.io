@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://0.0.0.0:4321/</loc>
+    <lastmod>2023-10-08</lastmod>
+  </url>
+
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/about/</loc>
+        
+          <lastmod>2023-01-31</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/blog/</loc>
+        
+          <lastmod>2023-10-07</lastmod>
+        
+      </url>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/</loc>
+        
+          <lastmod>2023-01-31</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/life/</loc>
+        
+          <lastmod>2023-10-08</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/projects/</loc>
+        
+          <lastmod>2023-10-07</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/resume/</loc>
+        
+          <lastmod>2023-10-07</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/running/</loc>
+        
+          <lastmod>2023-10-08</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/theuk/</loc>
+        
+          <lastmod>2023-10-08</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/travel/</loc>
+        
+          <lastmod>2023-10-08</lastmod>
+        
+      </url>
+    
+  
+
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/my-running-journey.html</loc>
+        
+          <lastmod>2023-10-08</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/east-yorkshire.html</loc>
+        
+          <lastmod>2023-10-08</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/profiling-rails-applications-with-flame-graphs.html</loc>
+        
+          <lastmod>2023-10-07</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/rolling-deployments-and-fingerprinting.html</loc>
+        
+          <lastmod>2023-10-07</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/welcome.html</loc>
+        
+          <lastmod>2023-10-07</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/sidekiqasynctask.html</loc>
+        
+          <lastmod>2023-10-07</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/open-graph.html</loc>
+        
+          <lastmod>2023-01-31</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/theme-curtana.html</loc>
+        
+          <lastmod>2023-01-31</lastmod>
+        
+      </url>
+    
+  
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/getting-started.html</loc>
+        
+          <lastmod>2023-01-31</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/customizing-styles.html</loc>
+        
+          <lastmod>2023-01-31</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/configuration.html</loc>
+        
+          <lastmod>2023-01-31</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/themes.html</loc>
+        
+          <lastmod>2023-01-31</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/creating-themes.html</loc>
+        
+          <lastmod>2023-01-31</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/syntax-highlighting.html</loc>
+        
+          <lastmod>2023-01-31</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/markdown-features-test.html</loc>
+        
+          <lastmod>2023-01-31</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/markup-example.html</loc>
+        
+          <lastmod>2023-01-31</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/custom-html-markups.html</loc>
+        
+          <lastmod>2023-01-31</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/custom-color-scheme.html</loc>
+        
+          <lastmod>2023-01-31</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/custom-css.html</loc>
+        
+          <lastmod>2023-01-31</lastmod>
+        
+      </url>
+    
+  
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/external-link-post.html</loc>
+        
+          <lastmod>2023-01-31</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/custom-heading-image.html</loc>
+        
+          <lastmod>2023-01-31</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/custom-heading-background.html</loc>
+        
+          <lastmod>2023-01-31</lastmod>
+        
+      </url>
+    
+  
+
+</urlset>

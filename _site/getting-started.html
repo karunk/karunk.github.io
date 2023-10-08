@@ -1,0 +1,265 @@
+<!doctype html>
+
+<html lang="en">
+
+<!--
+  Apply head only for dev environment, this is required for jekyll to
+  insert livereload scripts
+-->
+
+  <head>
+
+
+
+  <meta charset="utf-8">
+
+
+<title>KARRUN - Karun Vinayagam</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- Define a description for better SEO result -->
+<meta name="description" content="Requirements Almace Scaffolding has exactly the same requirements as Jekyll. For more info please refer to Installation - Jekyll. Quick Start Fork or clone the repo. Install dependencies with Ruby gem bundler and Node.js package manager npm. Run grunt init...">
+
+<!-- Cheome Web App theme color -->
+<meta name="theme-color" content="#ff00b4">
+
+<!-- Feed URL -->
+<link rel="alternate" href="/feed.xml" type="application/atom+xml">
+
+<!-- Site icons -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="icon" href="/favicon.png" type="image/png"><link rel="icon" href="/favicon.svg?assets-inline-assets-keep" sizes="any" type="image/svg+xml"><link rel="mask-icon" href="/mask-icon.svg" color="#ff00b4">
+
+<!-- Chrome Web App manifest -->
+<link rel="manifest" href="/manifest.json">
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="/assets/themes/curtana/css/app.css?assets-inline">
+
+<!-- Canonical links, avoid duplicate content problems -->
+<link rel="canonical" href="http://0.0.0.0:4321/getting-started.html">
+
+<!-- DNS prefetching for static files -->
+
+
+<!-- Head hooks -->
+
+
+
+  </head>
+
+<!-- Open Graph and Twitter Cards support -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Karun Vinayagam">
+<meta property="og:title" content="KARRUN">
+<meta property="og:url" content="http://0.0.0.0:4321/getting-started.html">
+<meta property="og:description" content="Requirements Almace Scaffolding has exactly the same requirements as Jekyll. For more info please refer to Installation - Jekyll. Quick Start Fork or clone the repo. Install dependencies with Ruby gem bundler and Node.js package manager npm. Run grunt init...">
+<meta property="og:image" content="http://0.0.0.0:4321/logo.png">
+
+<meta name="twitter:card" content="summary_large_image">
+
+
+  <meta name="twitter:site" content="@sparanoid">
+
+
+
+  <meta name="twitter:creator" content="@tunghsiao">
+
+
+
+  <meta property="article:published_time" content="2014-06-12T00:00:00+00:00">
+  <meta property="article:modified_time" content="2023-01-31T06:31:08+00:00">
+  <meta name="twitter:label1" value="Words">
+  <meta name="twitter:data1" value="432 words">
+  <meta name="twitter:label2" value="Reading time">
+  <meta name="twitter:data2" value="2 mins">
+
+<!-- Post specified styles -->
+<style data-assets-inline>
+  :root {
+    
+
+    
+
+    
+
+    
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-color-l: 95%;
+      --bg-color-l: 14%;
+      --bg-color-s: 2%;
+      --code-color-l: calc(var(--link-color-l) * 1.3);
+    }
+  }
+  
+
+  body {
+    
+  }
+
+  
+  
+    
+</style>
+<!-- Main navigation with current page / categoriy highlighted -->
+<nav class="navigation">
+  <ul>
+    <li >
+        <a href="/">Karun Vinayagam</a>
+      </li>
+    <li >
+        <a href="/blog/">Blog</a>
+      </li>
+    <li >
+        <a href="/life/">Life</a>
+      </li>
+    <li >
+        <a href="/resume/">📄 Résumé</a>
+      </li>
+    
+  </ul>
+</nav>
+<!-- Main content wrap -->
+<main class="content " role=main>
+  <!-- Post-wide custom CSS -->
+
+
+<!-- Article wrapper, limit width -->
+<article lang="en">
+
+  <!-- Post title -->
+  <header style="     ">
+
+    <h1 class="" title="KARRUN" data-title="KARRUN">
+      KARRUN<span class="dot dot--post"> </span>
+    </h1>
+
+    
+      <small>
+        By <span rel="author">Karun Kalaivanan Vinayagam</span>
+        on <time datetime="2014-06-12T00:00:00+00:00">Jun 12, 2014</time>
+      </small>
+    
+
+    
+
+  </header>
+
+  <!-- Post content -->
+  <div class="post-content">
+    <h2 id="requirements">Requirements</h2>
+
+<p>Almace Scaffolding has exactly the same requirements as Jekyll. For more info please refer to <a href="https://jekyllrb.com/docs/installation/">Installation - Jekyll</a>.</p>
+
+<h2 id="quick-start">Quick Start</h2>
+
+<ol>
+  <li><a href="https://github.com/sparanoid/almace-scaffolding/fork">Fork</a> or clone the repo.</li>
+  <li>Install dependencies with Ruby gem <a href="https://bundler.io/"><code class="language-plaintext highlighter-rouge">bundler</code></a> and Node.js package manager <a href="https://www.npmjs.org/"><code class="language-plaintext highlighter-rouge">npm</code></a>.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">grunt init</code> to initialize your project.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">grunt serve</code> to fire up a local server.</li>
+  <li>Edit and customize your site.</li>
+  <li>Change Git remote to your own repo.</li>
+  <li>Push and deploy.</li>
+</ol>
+
+<p>So in short for geeks:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/sparanoid/almace-scaffolding my-site
+<span class="nv">$ </span><span class="nb">cd </span>my-site
+<span class="nv">$ </span>bundle <span class="nb">install</span> <span class="o">&amp;&amp;</span> yarn <span class="nb">install</span>
+<span class="nv">$ </span>grunt init
+<span class="nv">$ </span>grunt serve
+<span class="c"># ...editing</span>
+<span class="nv">$ </span>git remote set-url origin https://github.com/sparanoid/my-site.git
+<span class="nv">$ </span>git push <span class="nt">-u</span> origin master
+<span class="c"># ...publishing</span>
+<span class="nv">$ </span>grunt <span class="o">&amp;&amp;</span> grunt deploy:rsync <span class="nt">--env</span><span class="o">=</span>prod
+</code></pre></div></div>
+
+<h2 id="download">Download</h2>
+
+<p>Go to the <a href="https://github.com/sparanoid/almace-scaffolding">GitHub repository</a> for downloads, bug reports, and feature requests.</p>
+
+<h2 id="transfer-from-jekyll">Transfer from Jekyll</h2>
+
+<p>You can simply copy all posts from your old Jekyll setup into <code class="language-plaintext highlighter-rouge">_app/_posts</code>, you can also transfer your custom pages into <code class="language-plaintext highlighter-rouge">_app/_pages/</code>.</p>
+
+<h2 id="upgrading">Upgrading</h2>
+
+<p>It will be easy if you’re a casual blogger and keep every core and template file untouched. You can use the following command to update Almace Scaffolding core files:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>grunt amsf-update
+</code></pre></div></div>
+
+<p>It checks the latest Almace Scaffolding build from GitHub and update core files automatically. Please keep in mind that if you changed some of the AMSF core files this action will <strong>override</strong> the changes you made. So it’s recommended to keep your project under version control, you will be always be able to compare changes for Almace Scaffolding.</p>
+
+<h2 id="using-beta-release">Using Beta Release</h2>
+
+<p>By default, when you run <code class="language-plaintext highlighter-rouge">amsf-update</code> you will get updated files from <code class="language-plaintext highlighter-rouge">release</code> branch. However, I’m continuously working on Almace Scaffolding, so there may have testing branches you can try and give me feedback if you’re interested. You can check the AMSF GitHub repository for available branches, and it’s very easy to switch:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>grunt amsf-update <span class="nt">--branch</span><span class="o">=</span>feat/service-worker
+</code></pre></div></div>
+
+<p>The branch <code class="language-plaintext highlighter-rouge">master</code> is the one which is always available to checkout and also has the latest changes:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>grunt amsf-update <span class="nt">--branch</span><span class="o">=</span>master
+</code></pre></div></div>
+
+<p>If you messed up with the testing branch, don’t worry, you can just run a normal update to revert them back:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>grunt amsf-update
+</code></pre></div></div>
+
+
+    
+    
+
+    
+  </div>
+
+</article>
+
+</main>
+<!-- Footer section -->
+
+  <footer class="footer">
+    <ul>
+      <li><a href="/">Karun Vinayagam</a></li>
+
+      
+
+      
+    </ul>
+  </footer>
+
+
+<!-- Theme scripts -->
+<script src="/assets/themes/curtana/js/app.js?assets-inline"></script>
+
+<!-- User scripts -->
+<script src="/assets/js/user.js?assets-inline"></script>
+
+<!-- Lightense Images -->
+
+
+<!-- Service Worker  -->
+
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6CET6JV4C"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-S6CET6JV4C');
+      </script>
+
+<!-- Foot hooks -->
+
+
+<!-- Finale -->
+</html>

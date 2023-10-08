@@ -1,0 +1,280 @@
+<!doctype html>
+
+<html lang="en">
+
+<!--
+  Apply head only for dev environment, this is required for jekyll to
+  insert livereload scripts
+-->
+
+  <head>
+
+
+
+  <meta charset="utf-8">
+
+
+<title>Sidekiq Async Task - Karun Vinayagam</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- Define a description for better SEO result -->
+<meta name="description" content="Making asyncronous jobs transactional・非同期ジョブをトランザクションにする! View on Github">
+
+<!-- Cheome Web App theme color -->
+<meta name="theme-color" content="#ff00b4">
+
+<!-- Feed URL -->
+<link rel="alternate" href="/feed.xml" type="application/atom+xml">
+
+<!-- Site icons -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="icon" href="/favicon.png" type="image/png"><link rel="icon" href="/favicon.svg?assets-inline-assets-keep" sizes="any" type="image/svg+xml"><link rel="mask-icon" href="/mask-icon.svg" color="#ff00b4">
+
+<!-- Chrome Web App manifest -->
+<link rel="manifest" href="/manifest.json">
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="/assets/themes/curtana/css/app.css?assets-inline">
+
+<!-- Canonical links, avoid duplicate content problems -->
+<link rel="canonical" href="http://0.0.0.0:4321/sidekiqasynctask.html">
+
+<!-- DNS prefetching for static files -->
+
+
+<!-- Head hooks -->
+
+
+
+  </head>
+
+<!-- Open Graph and Twitter Cards support -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Karun Vinayagam">
+<meta property="og:title" content="Sidekiq Async Task">
+<meta property="og:url" content="http://0.0.0.0:4321/sidekiqasynctask.html">
+<meta property="og:description" content="Making asyncronous jobs transactional・非同期ジョブをトランザクションにする! View on Github">
+<meta property="og:image" content="http://0.0.0.0:4321/assets/img/sidekiq.png">
+
+<meta name="twitter:card" content="summary_large_image">
+
+
+  <meta name="twitter:site" content="@sparanoid">
+
+
+
+  <meta name="twitter:creator" content="@tunghsiao">
+
+
+
+  <meta property="article:published_time" content="2019-04-12T00:00:00+00:00">
+  <meta property="article:modified_time" content="2023-10-07T22:46:06+00:00">
+  <meta name="twitter:label1" value="Words">
+  <meta name="twitter:data1" value="548 words">
+  <meta name="twitter:label2" value="Reading time">
+  <meta name="twitter:data2" value="2 mins">
+
+<!-- Post specified styles -->
+<style data-assets-inline>
+  :root {
+    
+
+    
+
+    
+
+    
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-color-l: 95%;
+      --bg-color-l: 14%;
+      --bg-color-s: 2%;
+      --code-color-l: calc(var(--link-color-l) * 1.3);
+    }
+  }
+  
+
+  body {
+    
+  }
+
+  
+  
+    
+</style>
+<!-- Main navigation with current page / categoriy highlighted -->
+<nav class="navigation">
+  <ul>
+    <li >
+        <a href="/">Karun Vinayagam</a>
+      </li>
+    <li >
+        <a href="/blog/">Blog</a>
+      </li>
+    <li >
+        <a href="/life/">Life</a>
+      </li>
+    <li >
+        <a href="/resume/">📄 Résumé</a>
+      </li>
+    
+  </ul>
+</nav>
+<!-- Main content wrap -->
+<main class="content " role=main>
+  <!-- Post-wide custom CSS -->
+
+
+<!-- Article wrapper, limit width -->
+<article lang="en">
+
+  <!-- Post title -->
+  <header style="background-image: url('/assets/img/sidekiq.png'); background-color: #070708; background-size: cover; background-position: center center; background-repeat: no-repeat; color: #fff;">
+
+    <h1 class="" title="Sidekiq Async Task" data-title="Sidekiq Async Task">
+      Sidekiq Async Task<span class="dot dot--post"> </span>
+    </h1>
+
+    
+      <small>
+        By <span rel="author">Karun Kalaivanan Vinayagam</span>
+        on <time datetime="2019-04-12T00:00:00+00:00">Apr 12, 2019</time>
+      </small>
+    
+
+    
+      <small>Making asyncronous jobs transactional・非同期ジョブをトランザクションにする! <br><br><a class="github-button" href="https://github.com/karunk/asynctask" data-icon="octicon-star" data-size="large" aria-label="Star ntkme/github-buttons on GitHub">View on Github</a></small>
+    
+
+  </header>
+
+  <!-- Post content -->
+  <div class="post-content">
+    <!-- Place this tag in your head or just before your close body tag. -->
+<script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
+
+<h2 id="the-problem">The Problem</h2>
+
+<p>Ever encountered a situation like this in production?</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">transaction</span> <span class="k">do</span>
+  <span class="n">user_one</span><span class="p">.</span><span class="nf">process_action_one</span>
+  <span class="n">user_two</span><span class="p">.</span><span class="nf">process_action_two</span>
+  <span class="no">MailWorker</span><span class="p">.</span><span class="nf">perform_async</span><span class="p">(</span><span class="s2">"UserMailer"</span><span class="p">,</span> <span class="s2">"success_mail"</span><span class="p">,</span> <span class="n">user_one</span><span class="p">.</span><span class="nf">id</span><span class="p">)</span>
+  <span class="no">MailWorker</span><span class="p">.</span><span class="nf">perform_async</span><span class="p">(</span><span class="s2">"UserMailer"</span><span class="p">,</span> <span class="s2">"success_mail"</span><span class="p">,</span> <span class="n">user_two</span><span class="p">.</span><span class="nf">id</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p>Where we have to process a group of actions within a transaction, and on success send mails to users.
+We use asycronous jobs to send our mails, as it can be blocking if done otherwise.</p>
+
+<p>Everything seems fine and simple, but what happens if during the function calls, an error is raised and the transaction which encapsulates these lines of code is rolled back?</p>
+
+<p>Since the jobs are already scheduled to run asyncronously, they will be processed regardless of the success or failure of the transaction. This can cause a problem, because the users could receive an erroneous notification if the transaction had rolled back and the intended code not executed.</p>
+
+<p>We thus require, a solution which only schedules asyncronous jobs called within a transaction, <strong>to be processed once the encapsulating transaction commits</strong>.</p>
+
+<h2 id="the-solution">The Solution</h2>
+
+<p><a href="https://rubygems.org/gems/sidekiq_async_task">Sidekiq Async Task</a> solves exactly this problem.
+This is a <strong>ruby gem</strong> which gives your <strong>Sidekiq</strong> background workers the feature to be <em>transaction-safe</em>. That is, it guarentees that the asyncronous sidekiq jobs within a transaction will only be executed once the transaction commits.</p>
+
+<h2 id="the-usage">The Usage</h2>
+
+<ul>
+  <li><strong>Install the gem</strong>, run the gem generators and migrate your database. (This gem adds a model in your database which keeps track of what asyncronous task to execute when).
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gem sidekiq_async_task <span class="c">#Add to gemspec</span>
+<span class="nv">$ </span>bundle <span class="nb">install</span>
+<span class="nv">$ </span>rails generate sidekiq_async_task:install
+<span class="nv">$ </span>rake db:migrate
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Inherit</strong> <code class="language-plaintext highlighter-rouge">SidekiqAsyncTask::TransactionSupport</code> to your <em>Sidekiq</em> worker.</li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MailWorker</span> <span class="o">&lt;</span> <span class="no">SidekiqAsyncTask</span><span class="o">::</span><span class="no">TransactionSupport</span>
+  <span class="kp">include</span> <span class="no">Sidekiq</span><span class="o">::</span><span class="no">Worker</span>
+  <span class="n">sidekiq_options</span> <span class="ss">retry: </span><span class="kp">true</span>
+
+  <span class="k">def</span> <span class="nf">perform_with_callback</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="c1">#Logic for sending mail</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p><strong>Define</strong> your worker logic in the <code class="language-plaintext highlighter-rouge">perform_with_callback</code> method instead of the generic <code class="language-plaintext highlighter-rouge">perform</code> method, in the worker class.</p>
+  </li>
+  <li>
+    <p><strong>Schedule</strong> your asyncronous tasks using any of these interfaces.</p>
+  </li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">HardWorker</span><span class="p">.</span><span class="nf">perform_with_transaction_in</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="nf">second</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+<span class="no">HardWorker</span><span class="p">.</span><span class="nf">perform_with_transaction_at</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+<span class="no">HardWorker</span><span class="p">.</span><span class="nf">perform_with_transaction_async</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<span class="no">HardWorker</span><span class="p">.</span><span class="nf">perform_with_transaction_future</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Enjoy</strong> safe transactional asyncronous tasks in rails!</li>
+</ul>
+
+<h2 id="the-working">The Working</h2>
+
+<p>Everytime we ask Sidekiq to run a worker asyncronously, the gem <strong>creates an entry in the AsyncTask table in the database</strong>. When the transaction commits, the AsyncTask entry also commits. The gem defines logic in the <strong>after_commit callback</strong> of the AsyncTask model to process the job corresponding to the AsyncTask entry.</p>
+
+<p>We can also create an <a href="https://activeadmin.info/">active_admin</a> dashboard for this model to have a UI to view all the scheduled and processed AsyncTasks in our database.</p>
+
+
+    
+    
+
+    
+  </div>
+
+</article>
+
+</main>
+<!-- Footer section -->
+
+  <footer class="footer">
+    <ul>
+      <li><a href="/">Karun Vinayagam</a></li>
+
+      
+
+      
+    </ul>
+  </footer>
+
+
+<!-- Theme scripts -->
+<script src="/assets/themes/curtana/js/app.js?assets-inline"></script>
+
+<!-- User scripts -->
+<script src="/assets/js/user.js?assets-inline"></script>
+
+<!-- Lightense Images -->
+
+
+<!-- Service Worker  -->
+
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6CET6JV4C"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-S6CET6JV4C');
+      </script>
+
+<!-- Foot hooks -->
+
+
+<!-- Finale -->
+</html>

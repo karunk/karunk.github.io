@@ -1,0 +1,284 @@
+<!doctype html>
+
+<html lang="en">
+
+<!--
+  Apply head only for dev environment, this is required for jekyll to
+  insert livereload scripts
+-->
+
+  <head>
+
+
+
+  <meta charset="utf-8">
+
+
+<title>Rolling deployments and fingerprintng - Karun Vinayagam</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- Define a description for better SEO result -->
+<meta name="description" content="There must be a time in every Rails developer’s life where they had to search the above question. The dreaded Rails Asset Pipeline is perhaps one of the most confusing features in Rails, especially if one deviates from its traditional...">
+
+<!-- Cheome Web App theme color -->
+<meta name="theme-color" content="#a73300">
+
+<!-- Feed URL -->
+<link rel="alternate" href="/feed.xml" type="application/atom+xml">
+
+<!-- Site icons -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="icon" href="/favicon.png" type="image/png"><link rel="icon" href="/favicon.svg?assets-inline-assets-keep" sizes="any" type="image/svg+xml"><link rel="mask-icon" href="/mask-icon.svg" color="#a73300">
+
+<!-- Chrome Web App manifest -->
+<link rel="manifest" href="/manifest.json">
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="/assets/themes/curtana/css/app.css?assets-inline">
+
+<!-- Canonical links, avoid duplicate content problems -->
+<link rel="canonical" href="http://0.0.0.0:4321/rolling-deployments-and-fingerprinting.html">
+
+<!-- DNS prefetching for static files -->
+
+
+<!-- Head hooks -->
+
+
+
+  </head>
+
+<!-- Open Graph and Twitter Cards support -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Karun Vinayagam">
+<meta property="og:title" content="Rolling deployments and fingerprintng">
+<meta property="og:url" content="http://0.0.0.0:4321/rolling-deployments-and-fingerprinting.html">
+<meta property="og:description" content="There must be a time in every Rails developer’s life where they had to search the above question. The dreaded Rails Asset Pipeline is perhaps one of the most confusing features in Rails, especially if one deviates from its traditional...">
+<meta property="og:image" content="https://pgnqdrjultom1827145.cdn.ntruss.com/img/a7/57/a7576939f3eecef9f93467c33691360c7040922bd8f21810440d508e6ade8b90_v1.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+
+
+  <meta name="twitter:site" content="@sparanoid">
+
+
+
+  <meta name="twitter:creator" content="@tunghsiao">
+
+
+
+  <meta property="article:published_time" content="2020-07-25T00:00:00+00:00">
+  <meta property="article:modified_time" content="2023-10-07T22:46:06+00:00">
+  <meta name="twitter:label1" value="Words">
+  <meta name="twitter:data1" value="690 words">
+  <meta name="twitter:label2" value="Reading time">
+  <meta name="twitter:data2" value="3 mins">
+
+<!-- Post specified styles -->
+<style data-assets-inline>
+  :root {
+    
+    --link-color: #a73300;
+    
+
+    
+
+    
+
+    
+    --code-color: #a73300;
+    
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-color-l: 95%;
+      --bg-color-l: 14%;
+      --bg-color-s: 2%;
+      --code-color-l: calc(var(--link-color-l) * 1.3);
+    }
+  }
+  
+
+  body {
+    
+  }
+
+  
+  
+    
+</style>
+<!-- Main navigation with current page / categoriy highlighted -->
+<nav class="navigation">
+  <ul>
+    <li >
+        <a href="/">Karun Vinayagam</a>
+      </li>
+    <li class=current>
+        <a href="/blog/">Blog</a>
+      </li>
+    <li >
+        <a href="/life/">Life</a>
+      </li>
+    <li >
+        <a href="/resume/">📄 Résumé</a>
+      </li>
+    
+  </ul>
+</nav>
+<!-- Main content wrap -->
+<main class="content " role=main>
+  <!-- Post-wide custom CSS -->
+<style>
+      .need-a-pink-border {
+border: 10px solid #ffd1dc;
+border-radius: 30px;
+padding: 5px;
+border-width: 100%;
+}
+
+    </style>
+
+<!-- Article wrapper, limit width -->
+<article lang="en">
+
+  <!-- Post title -->
+  <header style="background-image: url('https://pgnqdrjultom1827145.cdn.ntruss.com/img/a7/57/a7576939f3eecef9f93467c33691360c7040922bd8f21810440d508e6ade8b90_v1.jpg'); background-color: #8141b1; background-size: cover; background-position: 12% 12%; background-repeat: ; color: #ffffff;">
+
+    <h1 class="" title="Rolling deployments and fingerprintng" data-title="Rolling deployments and fingerprintng">
+      Rolling deployments and fingerprintng<span class="dot dot--post"> </span>
+    </h1>
+
+    
+      <small>
+        By <span rel="author">Karun Kalaivanan Vinayagam</span>
+        on <time datetime="2020-07-25T00:00:00+00:00">Jul 25, 2020</time>
+      </small>
+    
+
+    
+
+  </header>
+
+  <!-- Post content -->
+  <div class="post-content">
+    <p class="google-search-question">
+  <img class="need-a-pink-border" src="/assets/img/rails-assets-not-loading.png" />
+</p>
+
+<p>There must be a time in every Rails developer’s life where they had to search the above question.</p>
+
+<p>The dreaded <a href="https://guides.rubyonrails.org/asset_pipeline.html">Rails Asset Pipeline</a> is perhaps one of the most confusing features in Rails, especially if one deviates from its traditional usage. In this post, I describe one of the reasons why your assets might not be loading in production, despite working fine in all your pre-production environments.</p>
+
+<h2 id="the-error">The Error</h2>
+
+<p>I had faced this issue in on one of my recent production deployments. As soon as I deployed my <a href="https://martinfowler.com/bliki/CanaryRelease.html">Canary</a> pod in production, I began receiving the following error for some requests to fetch the <code class="language-plaintext highlighter-rouge">CSS</code> and <code class="language-plaintext highlighter-rouge">JS</code> files.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>500 : Internal Server Error 
+No route matches [GET] /assets.
+</code></pre></div></div>
+
+<p>Seeing the error rate increase I immediately rollbacked, which stopped the errors. When I began tracing the logs, I was shocked to find that the errors were not just happening in the <code class="language-plaintext highlighter-rouge">Canary</code> pods, but all other production pods also. I was shocked because I had not delpoyed the other production pods with the new code yet.</p>
+
+<h2 id="how-my-deployments-were-configured">How my deployments were configured</h2>
+
+<p>MMMy service was fronted by an <a href="https://www.envoyproxy.io/">Envoy Proxy</a> which redirected user requests to one of four pods. We used <a href="https://opensource.com/article/17/5/colorful-deployments">rolling deployments</a> to deploy new code into production. A <code class="language-plaintext highlighter-rouge">Canary</code> is first deployed followed by the other production pods.</p>
+
+<p class="google-search-question">
+  <img src="/assets/img/canary-deployed.jpg" />
+</p>
+
+<h2 id="the-cause">The Cause</h2>
+
+<p>After careful analysis of the error logs, I found out that this issue was not a Rails issue but an issue of how our deployments were configured.</p>
+
+<p>Let’s say before my recent deployment, I had two asset files <code class="language-plaintext highlighter-rouge">common.css</code> and <code class="language-plaintext highlighter-rouge">common.js</code>. Since the default behaviour of Rails Asset Pipeline is to minify and <a href="https://guides.rubyonrails.org/asset_pipeline.html#what-is-fingerprinting-and-why-should-i-care-questionmark">fingerprint</a> the asset files (as it should), the filenames are modified to the following :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>common-489839434903.css
+common-819894348394.js
+</code></pre></div></div>
+
+<h2 id="fingerprinting-asset-files">Fingerprinting Asset Files</h2>
+
+<p>The fingerprint suffix in the filename is a hash of the contents of the file. It changes whenever the contents of the file is updated. This behaviour optimizes the load time of the web page, as the browser does not request the asset file, if the file with this name is already cached in the browser.</p>
+
+<h2 id="assets-and-html-fetched-from-different-servers">Assets and HTML fetched from different servers</h2>
+
+<p>When a user sent a request to the backend to load a page, the <code class="language-plaintext highlighter-rouge">HTML</code> was served by one of the following servers : –</p>
+
+<ol>
+  <li><strong>Either</strong> the - Newly deployed canary</li>
+  <li><strong>Or</strong> - Any one of the remaining production servers</li>
+</ol>
+
+<p><em>Our problem arose because -  it is not necessary that the server which serves the HTML will also serve the asset files requested by the HTML.</em></p>
+
+<p>So if the initial request to load the <code class="language-plaintext highlighter-rouge">HTML</code> page went to the canary pod, it will respond with an HTML containing new asset files. Consequently, the request to fetch these asset files could have reached a pod with an older deployment. If so, the pod would not be able to find the new asset files. Rails being unable to find the required asset file will then forward the request to the controller which will eventually lead to <code class="language-plaintext highlighter-rouge">No route matches [GET] /assets</code> error.</p>
+
+<p>The vice-versa is also true, i.e. initial <code class="language-plaintext highlighter-rouge">HTML</code> being loaded by the pods having the older deployment, and the request to fetch the assets mentioned in the HTML going to the newly deployed <code class="language-plaintext highlighter-rouge">Canary</code> pod.</p>
+
+<p>This was the reason why, on just deploying the <code class="language-plaintext highlighter-rouge">Canary</code> pod, I started receving errors in all pods.</p>
+
+<h2 id="the-fix">The Fix</h2>
+<p>As an immediate fix, I removed asset fingerprinting.</p>
+
+<p>In my use case, I was only dealing with two asset files. Moreover, my asset files were going to be rapidly changing. Thus, I did not see the benifits of fingerprinting in the short term future.</p>
+
+<p>For the long term, I may plan on introducing an <code class="language-plaintext highlighter-rouge">NGINX</code> layer which will be responsible for caching and serving all my assets.</p>
+
+
+    
+    
+
+    
+  </div>
+
+</article>
+
+</main>
+<!-- Footer section -->
+
+  <footer class="footer">
+    <ul>
+      <li><a href="/">Karun Vinayagam</a></li>
+
+      
+
+      
+    </ul>
+  </footer>
+
+
+<!-- Theme scripts -->
+<script src="/assets/themes/curtana/js/app.js?assets-inline"></script>
+
+<!-- User scripts -->
+<script src="/assets/js/user.js?assets-inline"></script>
+
+<!-- Lightense Images -->
+
+  <script src="/assets/themes/curtana/js/lightense.min.js?assets-inline"></script>
+  <script>
+    window.addEventListener('load', function () {
+      Lightense('p > img:not(.no-lightense),.lightense');
+    }, false);
+  </script>
+
+
+<!-- Service Worker  -->
+
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6CET6JV4C"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-S6CET6JV4C');
+      </script>
+
+<!-- Foot hooks -->
+
+
+<!-- Finale -->
+</html>
