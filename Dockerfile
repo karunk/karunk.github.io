@@ -8,7 +8,8 @@ ADD ./_app/_posts/ /app/_app/_posts/
 ADD ./_config.yml /app/_config.yml
 ADD ./_app/assets /app/_app/assets
 
+COPY entrypoint.sh /entrypoint.sh
 
-CMD ["serve"]
+ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 4321 4321
