@@ -1,0 +1,9 @@
+name: 'Create almace-scaffolding Jekyll artefacts'
+description: 'Create _site files from Jekyll template files'
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
