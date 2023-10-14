@@ -8,10 +8,14 @@ ADD ./_app/_posts/ /app/_app/_posts/
 ADD ./_config.yml /app/_config.yml
 ADD ./_app/assets /app/_app/assets
 
-COPY entrypoint.sh /entrypoint.sh
+CMD ["serve"]
 
-RUN ["chmod", "+x", "/entrypoint.sh"]
+#EXPOSE 4321 4321
 
-ENTRYPOINT ["sh", "/entrypoint.sh"]
+#COPY entrypoint.sh /entrypoint.sh
 
-EXPOSE 4321 4321
+#RUN ["chmod", "+x", "/entrypoint.sh"]
+
+#ENTRYPOINT ["sh", "/entrypoint.sh"]
+
+#EXPOSE 4321 4321
