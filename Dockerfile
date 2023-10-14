@@ -10,6 +10,8 @@ ADD ./_app/assets /app/_app/assets
 
 COPY entrypoint.sh /entrypoint.sh
 
+RUN chmod +x /entrypoint.sh
+
 ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 4321 4321
