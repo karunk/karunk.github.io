@@ -10,6 +10,7 @@ ADD ./_app/assets /app/_app/assets
 
 RUN yarn install
 RUN bundle install
+RUN npm install grunt --save-dev
 
 CMD ["serve"]
 
