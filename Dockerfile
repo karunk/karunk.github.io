@@ -10,6 +10,10 @@ ADD ./_app/assets /app/_app/assets
 
 WORKDIR /app
 
+RUN ls
+
+RUN bundle install && yarn install
+
 ENTRYPOINT ["grunt"]
 
 EXPOSE 4321 4321
