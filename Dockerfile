@@ -10,3 +10,6 @@ ADD ./_app/assets /app/_app/assets
 
 EXPOSE 4321 4321
 
+COPY entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["sh", "/entrypoint.sh"]
