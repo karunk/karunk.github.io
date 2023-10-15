@@ -2,6 +2,8 @@
 
 echo "Hello World"
 
-cd app
+ls
 
-serve
+cd hub-action-temp/
+
+ls
