@@ -9,6 +9,4 @@ jobs:
       - name: Hello world action step
         id: hello
         uses: karunk/karunk.github.io@add-github-action
-      - name: Upload artifact
-        # Automatically uploads an artifact from the './_site' directory by default
-        uses: actions/upload-pages-artifact@v2
+
