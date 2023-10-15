@@ -1,15 +1,12 @@
-FROM sparanoid/ruby-node:latest
+FROM sparanoid/almace-scaffolding:latest
 
-COPY . /app
+ADD ./_app/_pages/ /app/_app/_pages/
+ADD ./_app/_layouts/ /app/_app/_layouts/
+ADD ./_app/_includes/ /app/_app/_includes/
+ADD ./_app/_data/ /app/_app/_data/
+ADD ./_app/_posts/ /app/_app/_posts/
+ADD ./_config.yml /app/_config.yml
+ADD ./_app/assets /app/_app/assets
 
-VOLUME /app
+EXPOSE 4321 4321
 
-WORKDIR /app
-
-RUN bundle install && yarn install
-
-EXPOSE 4321
-
-ENTRYPOINT ["grunt"]
-
-CMD [ "--help" ]
