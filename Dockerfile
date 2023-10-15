@@ -8,14 +8,6 @@ ADD ./_app/_posts/ /app/_app/_posts/
 ADD ./_config.yml /app/_config.yml
 ADD ./_app/assets /app/_app/assets
 
-WORKDIR /app
-
-RUN ls
-
-RUN bundle install && yarn install
-
-ENTRYPOINT ["grunt"]
+CMD ["serve"]
 
 EXPOSE 4321 4321
-
-
