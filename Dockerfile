@@ -8,18 +8,3 @@ ADD ./_app/_posts/ /app/_app/_posts/
 ADD ./_config.yml /app/_config.yml
 ADD ./_app/assets /app/_app/assets
 
-RUN yarn install
-RUN bundle install
-RUN npm install grunt --save-dev
-
-CMD ["serve"]
-
-#EXPOSE 4321 4321
-
-#COPY entrypoint.sh /entrypoint.sh
-
-#RUN ["chmod", "+x", "/entrypoint.sh"]
-
-#ENTRYPOINT ["sh", "/entrypoint.sh"]
-
-#EXPOSE 4321 4321
