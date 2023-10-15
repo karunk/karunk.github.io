@@ -8,7 +8,7 @@ ADD ./_app/_posts/ /app/_app/_posts/
 ADD ./_config.yml /app/_config.yml
 ADD ./_app/assets /app/_app/assets
 
-RUN dir /s
+RUN ls
 
 EXPOSE 4321 4321
 
