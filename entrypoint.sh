@@ -2,3 +2,6 @@
 
 echo "Hello World"
 
+cd app
+
+serve
