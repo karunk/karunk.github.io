@@ -4,30 +4,6 @@
   
     
     {
-      "title": "Elasticache Upgrade Outages",
-      "permalink": "http://0.0.0.0:4321/elasticache-upgrade-outages.html",
-      "link": "http://0.0.0.0:4321/elasticache-upgrade-outages.html",
-      "date": "2023-10-13T00:00:00+00:00",
-      
-        "modified": "2023-12-29T19:27:35+00:00",
-      
-      "author": {
-        "name": "Karun Kalaivanan Vinayagam",
-        "url": "http://vkarun.me/",
-        "email": "mail@vkarun.me"
-      },
-      "content": "<p>Theme Curtana has full <a href=\"http://ogp.me/\">Open Graph</a> and <a href=\"https://dev.twitter.com/docs/cards\">Twitter Cards</a> support.</p>\n\n<p>It will look for the image in the following order:</p>\n\n<ol>\n  <li>Use <code class=\"language-plaintext highlighter-rouge\">page.thumbnail</code> if defined in your post <a href=\"https://jekyllrb.com/docs/frontmatter/\">front-matter field</a>.</li>\n  <li>If no specified <code class=\"language-plaintext highlighter-rouge\">page.thumbnail</code> defined, it uses <a href=\"/custom-heading-background.html\">Heading Background Image</a> (aka. <code class=\"language-plaintext highlighter-rouge\">page.heading-bg</code>) if defined in your post front-matter field.</li>\n  <li>If no heading background image found, Curtana will try to grab the first image (wrapped inside <code class=\"language-plaintext highlighter-rouge\">&lt;img&gt;</code>) in your post as your post thumbnail</li>\n  <li>If nothing found, it fails back to <code class=\"language-plaintext highlighter-rouge\">logo.png</code> located at your site root.</li>\n</ol>\n\n<p>You can always use <code class=\"language-plaintext highlighter-rouge\">page.thumb_force_logo</code> in your post front-matter field to override the above lookup.</p>\n\n<p>Here’s a preview on Twitter:</p>\n\n<p><img src=\"https://s3.amazonaws.com/sparanoid/open-graph-preview.png\" alt=\"Twitter Cards (Open Graph compatible) Preview\" /></p>",
-      "excerpt": "Theme Curtana has full Open Graph and Twitter Cards support.",
-      "languages": null,
-      "categories": ["blog"],
-      "tags": ["rails"]
-    }
-    
-  
-
-  
-    ,
-    {
       "title": "My Running Journey So Far",
       "permalink": "http://0.0.0.0:4321/my-running-journey.html",
       "link": "http://0.0.0.0:4321/my-running-journey.html",
