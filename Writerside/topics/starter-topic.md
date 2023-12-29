@@ -5,3 +5,8 @@ You can use it as a sandbox to play with Writerside features, and remove it from
 
 ## Add new topics
 You can create empty topics, or choose a template for different types of content that contains some boilerplate structure to help you get started:
+
+
+edit code inside `_app`
+
+index.html contains code for the home page
