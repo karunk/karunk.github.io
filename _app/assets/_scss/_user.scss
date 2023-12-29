@@ -84,6 +84,70 @@
   margin: 20px;
 }
 
+aside.timeline {
+  min-width: 300px;
+  margin-top: -16vmin;
+}
+
+aside.timeline p {
+  font-size: 0.7em;
+  line-height: 1.75em;
+  border-top: 3px solid;
+  border-image: linear-gradient(to right, #743ad5 0%, #d53a9d 100%);
+  border-image-slice: 1;
+  border-width: 3px;
+  margin: 0;
+  padding: 40px;
+  counter-increment: section;
+  position: relative;
+  color: black;
+
+    //numbers
+    &:before {
+      content: counter(section);
+      position: absolute;
+      border-radius: 50%;
+      padding: 5px;
+      height: 2.25em;
+      width: 2.25em;
+      background-color: black;
+      text-align: center;
+      line-height: -1.25em;
+      color: white;
+      font-size: 1em;
+    }
+}
+
+aside.timeline p:nth-child(odd) {
+  border-right: 3px solid;
+  padding-left: 0;
+
+  &:before {
+    left: 100%;
+    margin-left: -20px;
+  }
+}
+
+aside.timeline p:nth-child(even) {
+  border-left: 3px solid;
+  padding-right: 0;
+
+  &:before {
+    right: 100%;
+    margin-right: -20px;
+  }
+}
+
+aside.timeline p:first-child {
+  border-top: 0;
+  border-top-right-radius:0;
+  border-top-left-radius:0;
+}
+aside.timeline p:last-child {
+  border-bottom-right-radius:0;
+  border-bottom-left-radius:0;
+}
+
 @media only screen and (min-width: 1026px) {
     header  .alternative-header-text-only {
         display: none;
