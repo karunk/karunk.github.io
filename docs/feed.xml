@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>Karun Vinayagam</title>
   <subtitle>Karun - Software Engineer</subtitle>
-  <updated>2023-12-29T19:42:05+00:00</updated>
+  <updated>2023-10-08T20:22:41+00:00</updated>
   <id>http://0.0.0.0:4321/</id>
   <generator uri="https://sparanoid.com/lab/amsf/" version="2.0.24">Almace Scaffolding</generator>
 
@@ -14,58 +14,6 @@
     <email>mail@vkarun.me</email>
   </author>
 
-  
-    
-      
-
-      
-
-      <entry>
-        <title>Elasticache Upgrade Outages</title>
-        <id>http://0.0.0.0:4321/elasticache-upgrade-outages.html</id>
-        <link rel="alternate" type="text/html" href="http://0.0.0.0:4321/elasticache-upgrade-outages.html" />
-        <published>2023-10-13T00:00:00+00:00</published>
-
-        
-          <updated>2023-12-29T19:27:35+00:00</updated>
-        
-
-        <author>
-          <name>Karun Kalaivanan Vinayagam</name>
-          <uri>http://vkarun.me/</uri>
-          <email>mail@vkarun.me</email>
-        </author>
-
-        <content type="html" xml:base="http://0.0.0.0:4321/">
-          
-            &lt;p&gt;Theme Curtana has full &lt;a href=&quot;http://ogp.me/&quot;&gt;Open Graph&lt;/a&gt; and &lt;a href=&quot;https://dev.twitter.com/docs/cards&quot;&gt;Twitter Cards&lt;/a&gt; support.&lt;/p&gt;
-
-&lt;p&gt;It will look for the image in the following order:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.thumbnail&lt;/code&gt; if defined in your post &lt;a href=&quot;https://jekyllrb.com/docs/frontmatter/&quot;&gt;front-matter field&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;If no specified &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.thumbnail&lt;/code&gt; defined, it uses &lt;a href=&quot;/custom-heading-background.html&quot;&gt;Heading Background Image&lt;/a&gt; (aka. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.heading-bg&lt;/code&gt;) if defined in your post front-matter field.&lt;/li&gt;
-  &lt;li&gt;If no heading background image found, Curtana will try to grab the first image (wrapped inside &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;img&amp;gt;&lt;/code&gt;) in your post as your post thumbnail&lt;/li&gt;
-  &lt;li&gt;If nothing found, it fails back to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;logo.png&lt;/code&gt; located at your site root.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;You can always use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.thumb_force_logo&lt;/code&gt; in your post front-matter field to override the above lookup.&lt;/p&gt;
-
-&lt;p&gt;Here’s a preview on Twitter:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://s3.amazonaws.com/sparanoid/open-graph-preview.png&quot; alt=&quot;Twitter Cards (Open Graph compatible) Preview&quot; /&gt;&lt;/p&gt;
-
-          
-          
-        
-      
-        </content>
-
-        
-          <summary>Theme Curtana has full Open Graph and Twitter Cards support.</summary>
-        
-      </entry>
-    
   
     
       
