@@ -6,6 +6,8 @@
                  name="Karun's Website powered by Almace Scaffolding"
                  start-page="starter-topic.md">
 
+    <toc-element topic="Overview.md"/>
+    <toc-element topic="Starter.md"/>
     <toc-element topic="starter-topic.md"/>
     <toc-element topic="How-to-set-up-dev-environment.md"/>
 </instance-profile>
